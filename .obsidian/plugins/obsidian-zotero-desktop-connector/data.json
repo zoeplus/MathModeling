@@ -1,0 +1,28 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Bibiography",
+      "format": "formatted-bibliography",
+      "cslStyle": "apa"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "Import Zotero Note",
+      "outputPathTemplate": "Knowledge Base/Raw/{{citekey}}.md",
+      "imageOutputPathTemplate": "Knowledge Base/Raw/Assets{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "cslStyle": "apa",
+      "templatePath": "Template/zotero_integration.md"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": true,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "exeOverridePath": "D:\\ALL\\Tools\\pdfannots2json.Windows.x64\\pdfannots2json.exe"
+}

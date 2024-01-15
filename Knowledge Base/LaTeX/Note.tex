@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\setmainfont{LXGW WenKai}[AutoFakeBold=2.5] %% 如果有兼容性问题，注释本行，BoldFont=黑体
+\usepackage[fontset=none]{ctex} %% 中文支持自动换行，默认不设置字体
+\usepackage{hyperref} %% 插入链接用
+
+\title{Math Modeling Note}
+\author{范某}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{前置说明}
+
+此处是一个LaTeX使用的介绍.
+
+\subsection*{环境配置}
+
+我这里非常想要使用自定义字体“霞鹜文楷”，所以使用了XeLaTeX作为
+编译引擎，这样就可以非常简单地使用系统上安装的字体. 设置见settings.json.
+但就害怕会有兼容性问题，不过目前发现的问题都能得到解决.
+
+\leavevmode
+
+我目前发现的问题有：
+\begin{enumerate}
+    \item 无法使用加粗 \textbf{加粗} 只能使用AutoFakeBold或者是BoldFont指定加粗字体；
+    \item 无法自动换行；需要使用sloppypar环境，或者必须要有CTeX环境，但是使用了CTeX环境又会冲突....；为了解决这一问题，在调用CTeX时设置fontset=none即可
+\end{enumerate}
+
+\noindent \textbf{注}：XeLaTeX的配置参考自\href{https://tex.stackexchange.com/questions/226/installing-ttf-fonts-in-latex}{Installing TTF fonts in LaTeX},
+以及\href{https://tex.stackexchange.com/questions/564758/how-to-use-visual-studio-code-latex-workshop-with-xelatex}{VSCode: how to use xelatex}
+
+\leavevmode
+
+\subsection*{为什么用VSCode进行\LaTeX 编辑}
+
+目前大部分的需求都能被Markdown语法解决，并且转成PDF也非常简单. 但是在专业排版方面，Markdown不如\LaTeX.
+
+此次尝试使用Visual Studio Code中的Live Share插件进行合作，作为Overleaf的替代.
+
+然而最最最最重要的是，VSCode中可以进行\textbf{版本控制}，只需要Ctrl + s即可保存一次版本，应该没有更简单的了.
+
+\leavevmode
+
+\subsection*{如何在Visual Studio中编译\LaTeX}
+
+配置方面：首先需要安装TeX Live. Windows系统按照文档上说不需要设置环境变量，然后在VSCode中安装LaTeX插件即可使用，
+并按照需要settings.json文件中设置格式，控制编译引擎和输出文件位置.
+
+我这里设置的json.文件中指定将输出放在out子文件夹下.
+
+处理报错：需要查看.log后缀的文件，以校对错误.
+
+查看输出的PDF：因为我直接放到out文件夹中，似乎没有办法实时编译后查看.
+
+重新编译：命令行中Kill LaTeX Compiler即可.
+
+\subsection*{中文文档符号规范}
+
+所有的句号写为英文句号“.”. 
+
+其他保持为中文符号.
+
+\break
+
+emmmm
+
+\end{document}
