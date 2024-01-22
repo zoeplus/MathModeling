@@ -11,6 +11,13 @@
 
 - [ISL Exercise 2-8](ISL-Exercise-2-8.r)
 
+## Reading Notes
+
+主要是ISL和Data Mining Textbook，此外也在读ESL（ISL浅显，很多结论直接给的）
+
+- [SL Reading Notes](SL-reading-notes.md)
+- [Data Mining Reading Notes](Data-mining-reading-notes.md)
+
 ## Datasets
 
 ISL的网站上有一些toy datasets可以用，顺便上传.
