@@ -16,7 +16,7 @@
 主要是ISL和Data Mining Textbook，此外也在读ESL（ISL浅显，很多结论直接给的）
 
 - [SL Reading Notes](SL-reading-notes.md)
-- [Data Mining Reading Notes](Data-mining-reading-notes.md)
+- [Data Mining Reading Notes](Knowledge Base/Cookbooks/ISL-Exercise-2-8.r.md)
 
 ## Datasets
 
