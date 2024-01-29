@@ -3,8 +3,40 @@
 # Basic
 
 ```R
+print(paste("Hello,", "world!"))
 # Ask for help
 ?funcname
+# packages
+install.packages("some_packages")
+```
+
+```R
+# logical #issue
+& | ! # elementwise
+&& || # only examine the first element
+```
+
+```R
+if (condition) {
+ expr1
+} else {
+ expr2
+}
+
+for(var in seq) {
+    expr
+    break
+}
+
+while(condition) {
+    expr
+}
+while(condition) {
+    break # stop the while loop
+```
+
+```R
+strsplit() #issue
 ```
 
 ## Loading Data
@@ -82,13 +114,32 @@ fac_vec <- as.factor(vec)
 
 ## factor with levels
 fac_vec <- factor(vector, order = TRUE, levels = c("lev1", "lev2", ...))
+# acsending
 # alternatively levels(fac_vec) <- c("lev1", "lev2", ...)
-# you can also use levels() to change the existing levels to another set of levels
+# you can also use levels() to change the existing levels to another set of levels, e.g. levels(fac_vec) = new_levels
+
+## Order factor
+order(fac_vec)
+fac_vec[order(fac_vec)]
+```
+
+### List
+
+```R
+my_list <- list(comp1, comp2, ...)
+my_list <- list(name1 = comp1, name2 = comp2, ...)
+# or equivalently names(my_list) <- name_list
+
+# select components
+my_list$name1
+my_list[[1]]
 ```
 
 ## Arithmetic
 
 ```R
+mat1 * mat2 # elementwise
+mat1 %*% mat2 # matrix mulitplication
 sqrt(vec_or_mat)
 vec_or_mat^2
 
@@ -113,12 +164,17 @@ vec <- rnorm(19, mean=1, sd=.2) # generate random normal variables
 
 ## Graphics
 
+[ggplot](https://r-charts.com/ggplot2/)
+
 ```R
+# line: intercept a and slope b, lwd: line width
+abline(a, b, lwd = 3, col = "red") 
+
 ## scatter
 x <- rnorm(10)
 y <- rnorm(10)
-plot(x, y, xlab = "the x-axis label", ylab = "the y-axis label", main = "the title", col = "green")
-# plot(y ~ x)
+plot(x, y, xlab = "the x-axis label", ylab = "the y-axis label", main = "the title", col = "green", pch = "+")
+# plot(y ~ x), pch option to create plotting symbols
 
 ## countour
 z <- outer(x, y, function(x,y) cos(y) / (1 + x^2))
@@ -182,7 +238,7 @@ rep(x, times)
 ## Data Frame
 
 ```R
-## create data frame
+## create data frame (by column)
 df <- data.frame(vec1, vec2, ...)
 
 ## exploring the data frame
@@ -193,13 +249,85 @@ dim(df)
 names(df) # check the variable names
 
 str(df) # this will give a overview of each variable in the data frame
-summary(df) # produce a summary for each variable in the data frame
+summary(df) # produce a summary for each variable in the data frame, e.g. min, 1st Qu, Median, Mean, 3st Qu, Max
+# note that summary can also be used to vector, matrix
 
 df[1, ]
 df[ , 2] # or df$2thColName or df[ , "2thColName"]
 df[1, 2]
 
-## missing values
+```
+
+### R Toy Dataset
+
+```R
+mtcars # Motor Trend Car Road Tests
+```
+
+### NaN
+
+```R
+# missing values omit
 df <- na.omit(df) # remove the rows containing missing values
 
+# missing values are indicated as NaN
+df.isna()
+df.isna().any() # check the column
+df.isna().sum() # check the number of NaN in each column
+df.isna().sum().plot(kind="bar")
+# removing missing values
+df.dropna()
+# replacing missing values
+df.fillna(0)
 ```
+
+# Model
+
+## Linear Regression
+
+```R
+# y: response, x: predictor, data: data set
+lm.fit <- lm(y ~ x, data)
+# check coefficients
+lm.fit
+# check residuals, coefficients, std error, t value, p value
+summary(lm.fit)
+
+# check statistics you can get from linear regression
+names(lm.fit)
+# e.g. plot residual by index
+plot(lm.fit$residuals)
+
+# confidence interval
+confint(lm.fit)
+# for a few given value, give confidence inteval, prediction inteval
+predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "confidence")
+predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "prediction")
+
+# plot the scatter and regression line
+plot(x, y)
+abline(lm.fit)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
