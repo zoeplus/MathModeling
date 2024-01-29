@@ -1,26 +1,20 @@
-# 更新日志：2024-01-22
+# 更新日志：2024-01-29
 
 ## Cookbooks
 
-本周主要在看ISL，顺便学习一些R的内容. Python Pandas的一些知识还在迁移.
+本周主要在看ISL第3章节，发现ISL给的大部分都是结论和启发性的内容，结合例子说法. 公式比较少，对一些缺少公式的地方做了补充. 尚存在的问题用 #issue , #imcomplementation , #implementation 标注. 可以在Obsidian中搜索标签找到. 描述用Obsidian中的注释语句写的.
 
-- [R Cookbook](Knowledge%20Base/Cookbooks/R-Cookbook.md)
-- [Python Data Science Cookbook](Knowledge%20Base/Cookbooks/Python-data-science-Cookbook.md)
-
-以及在ISL上做了一些exercises，ISL的exercises包括概念（conceptual）和应用（applied），这里把其中一个exercise写了下来（R语言版本）.
-
-- [ISL Exercise 2-8](Knowledge%20Base/Cookbooks/ISL-Exercise-2-8.r)
+- [R Cookbook](Knowledge%20Base/Cookbooks/R-Cookbook.md)： 更新了一些basics
+- [Python Data Science Cookbook](Knowledge%20Base/Cookbooks/Python-data-science-Cookbook.md)：之前学的迁移了一些，还有一小部分.
 
 ## Reading Notes
 
-主要是ISL和Data Mining Textbook，此外也在读ESL（ISL浅显，很多结论直接给的）
-
-- [SL Reading Notes](Knowledge%20Base/Raw/SL-reading-notes.md)
-- [Data Mining Reading Notes](Knowledge%20Base/Cookbooks/ISL-Exercise-2-8.r)
+- [SL Reading Notes](Knowledge%20Base/Raw/SL-reading-notes.md)：目前到Chap.4 Sec.4.3 (p148)
+- [Data Mining Reading Notes](Knowledge%20Base/Raw/Data-mining-reading-notes.md)：相比上周无更新.
 
 ## Datasets
 
-ISL的网站上有一些toy datasets可以用，顺便上传.
+加了一个玩具数据集.
 
 - [Datasets README](Resources/Datasets/README.md)
 
@@ -29,6 +23,7 @@ ISL的网站上有一些toy datasets可以用，顺便上传.
 ## In one week
 - [ ] **Milestone 1**: Finish ISL Chap.4
 - [ ] **Milestone 2**: Finish Data Mining Cookbook Chap.2
+- [ ] **Milestone 3**: Finish 2023-C050, with R implementation
 
 ## In two weeks
-- [ ] **Milestone 3**: Finish 2023-C050, with R implementation
+- [ ] **Milestone 4**: Lab 3, Lab 4
