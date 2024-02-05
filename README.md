@@ -1,22 +1,22 @@
-# 更新日志：2024-01-29
+# 更新日志：2024-02-05
 
-本周主要在看ISL第3章节，发现ISL给的大部分都是结论和启发性的内容，结合例子说法. 公式比较少，对一些缺少公式的地方做了补充. 尚存在的问题用 #issue , #imcomplementation , #implementation 标注. 可以在Obsidian中搜索标签找到. 问题描述是使用Obsidian中的注释语句写的. 即： #issue %%这是一段对于issue的描述%% 在Obsidian的阅读模式下不可见.
+本周主要在看Data Mining Testbook第2章节. 
+
+所有笔记，尚存在的问题用 #issue , #imcomplementation , #implementation 标注. 可以在Obsidian中搜索标签找到. 问题描述是使用Obsidian中的注释语句写的. 即： #issue %%这是一段对于issue的描述%% 在Obsidian的阅读模式下不可见.
 
 ## Cookbooks
 
-- [R Cookbook](Knowledge%20Base/Cookbooks/R-Cookbook.md)： 更新了一些basics
-- [Python Data Science Cookbook](Knowledge%20Base/Cookbooks/Python-data-science-Cookbook.md)：之前学的迁移了一些，还有一小部分.
+- [R Cookbook](Knowledge%20Base/Cookbooks/R-Cookbook.md)： 更新LM
+- [Python Data Science Cookbook](Knowledge%20Base/Cookbooks/Python-data-science-Cookbook.md)：与上周相比无变化.
 
 ## Reading Notes
 
-- [SL Reading Notes](Knowledge%20Base/Raw/SL-reading-notes.md)：目前到Chap.4 Sec.4.3 (p148)
-- [Data Mining Reading Notes](Knowledge%20Base/Raw/Data-mining-reading-notes.md)：相比上周无更新.
+- [SL Reading Notes](Knowledge%20Base/Raw/SL-reading-notes.md)：目前到Chap.4 Sec.4.4 (p152)
+- [Data Mining Reading Notes](Knowledge%20Base/Raw/Data-mining-reading-notes.md)：更新PCA，SVD和Haar小波变换.
 
 ## Datasets
 
-加了一个玩具数据集.
-
-- [Datasets README](Resources/Datasets/README.md)
+无变化.
 
 # Roadmap
 

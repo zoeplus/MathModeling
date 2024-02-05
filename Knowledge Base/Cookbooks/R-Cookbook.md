@@ -1,6 +1,8 @@
 [ISLR v2 Resources](https://www.statlearning.com/resources-second-edition)
 
-# Basic
+`R version 4.3.2 (2023-10-31 ucrt) -- "Eye Holes"`
+
+# Basics
 
 ```R
 print(paste("Hello,", "world!"))
@@ -231,6 +233,9 @@ identify(property1, property2, property_to_be_query)
 ## Genetic Functions
 
 ```R
+# index of the max / min variable
+which.max(object)
+which.min(object)
 # repetition
 rep(x, times)
 ```
@@ -285,49 +290,74 @@ df.fillna(0)
 
 ## Linear Regression
 
+### Single-variable LM
+
 ```R
 # y: response, x: predictor, data: data set
 lm.fit <- lm(y ~ x, data)
 # check coefficients
 lm.fit
-# check residuals, coefficients, std error, t value, p value
+# check residuals, coefficients (estimated, std error, t value, p value), RSE, multiple R^2 & adjusted R^2 #issue , F-statistic and corresponding p-value 
 summary(lm.fit)
+
+# check predicted values
+predict(lm.fit)
+# for a few given value, give confidence inteval, prediction inteval
+predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "confidence")
+predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "prediction")
 
 # check statistics you can get from linear regression
 names(lm.fit)
 # e.g. plot residual by index
 plot(lm.fit$residuals)
+# acquire coefficients
+lm.fit$coefficients # or coef(lm.fit)
 
 # confidence interval
 confint(lm.fit)
-# for a few given value, give confidence inteval, prediction inteval
-predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "confidence")
-predict(lm.fit, data.frame(predictor = (c(1,2,3))), interval = "prediction")
+
+# R^2
+summary(lm.fit)$r.sq
+
+# residuals and studentized residuals
+lm.fit$residuals
+rstudent(lm.fit)
+# RSE
+summary(lm.fit)$sigma
+
+# leverages
+plot(hatvalues(lm.fit))
+# tell which one has the largest leverage
+which.max(hatvlaues(lm.fit))
 
 # plot the scatter and regression line
 plot(x, y)
-abline(lm.fit)
-
-
+abline(lm.fit, lwd = 3) # abline for a,b line, a + bx
 ```
 
+Diagonostic plots.
 
+```R
+par(mfrow=c(2,2))
+plot(lm.fit) 
+## four diagnostic plots
+# residuals ~ fitted values
+# standardized residuals ~ theoretical quantiles
+# standardized residuals ~ fitted values
+# standardized residuals ~ leverage
+```
 
+### Multi-variable LM
 
+```R
+lm.fit <- lm(y ~ x1 + x2 + ..., data)
+# fit LM without some variables 
+lm.fit1 <- update(lm.fit, ~ . -var_to_be_ignored)
+# altenatively
+lm.fit1 <- lm(y ~ . -var_to_be_ignored)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# VIF
+library(car)
+vif(lm.fit)
+```
 
